@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Travel Agency</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Devonshire|Miss+Fajardose|Open+Sans|Poiret+One" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+
+<section id="contact">
+<!-- Nav Bar -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <!-- <a class="navbar-brand" href="#">Logo</a> -->
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+       <ul class="nav navbar-nav mr-dehaviland">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="team.html">About Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav> <!-- Nav Bar -->
+
+<!-- Contact -->
+<div class=" container container-fluid contactform">
+  <div class="row">
+      <div class="col-sm-6">
+        <h2 style="font-family: 'Poiret One', cursive;">CONTACT US</h2>
+            <form role="form">
+                <fieldset>
+                  <legend>Have more questions?</legend>
+                  <div class="form-group">
+                    <label for="name" class="col-sm-12">Full Name</label>
+                    <div class="col-sm-12">
+                        <input type="text" name="name" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="email" class="col-sm-12">Email Address</label>
+                    <div class="col-sm-12">
+                        <input type="text" name="name" class="form-control">
+                 </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label"><br>What kind of room are you interested in?</label>
+                    <div class="radio">
+                        <label>
+                          <input type="radio" name="roomtype" value="queen">
+                          Queen bed</label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                        <input type="radio" name="roomtype" value="king">
+                        King bed with pull out sofa</label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                        <input type="radio" name="roomtype" value="2queen">
+                        Two queen beds</label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                        <input type="radio" name="roomtype" value="suite">
+                        Suite with kitchenette</label>
+                    </div>
+                   </div>
+                   <div class="form-group">
+                      <label class="control-label">Would you prefer a smoking or non-smoking room?</label>
+                      <div class="radio">
+                        <label>
+                        <input type="radio" name="smoking" value="smoking">
+                        Smoking</label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                        <input type="radio" name="smoking" value="nonsmoking">
+                        Non-smoking</label>
+                      </div>
+                   </div>
+                   <div class="form-group">
+                      <label for="continent" class="control-label">Your continent:</label>
+                      <select name="continent" size="1" class="form-control">
+                        <option selected>Select one...</option>
+                        <option value="afr">Africa</option>
+                        <option value="ant">Antarctica</option>
+                        <option value="asia">Asia</option>
+                        <option value="aus">Australia</option>
+                        <option value="eur">Europe</option>
+                        <option value="na">North America</option>
+                        <option value="sa">South America</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="comments" class="control-label">Comments:</label>
+                      <textarea name="comments" class="form-control" rows="3" data-toggle="tooltip" title="We welcome your feedback!" data-placement="bottom"></textarea>
+                    </div>
+
+                      <label for="subscribe" class="checkbox-inline">
+                        <input name="subscribe" type="checkbox" value="subscribe" data-toggle="collapse" data-target="#email">
+                        Subscribe me to the newsletter </label>
+                    <div class="form-group collapse in" id="email">
+                      <label for="email" class="col-sm-2">Your email</label>
+                      <div class="col-sm-10">
+                        <input type="text" name="email" class="form-control">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </fieldset>
+            </form>
+
+        </div>
+      <div class="col-sm-6 findus">
+        <h2 style="font-family: 'Poiret One', cursive;">FIND US</h2>
+        <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: 14.748779, lng: 121.050103};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+      var marker = new google.maps.Marker({position: myCenter});
+
+    marker.setMap(map);
+    var marker = new google.maps.Marker({
+    position:myCenter,
+    animation:google.maps.Animation.BOUNCE
+    });
+
+  marker.setMap(map);
+
+  var myCity = new google.maps.Circle({
+      center:amsterdam,
+      radius:20000,
+      strokeColor:"#0000FF",
+      strokeOpacity:0.8,
+      strokeWeight:2,
+      fillColor:"#0000FF",
+      fillOpacity:0.4
+    });
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6HjBX0J1iG7PLGXI1M0GOmTYfI4RToeQ&callback=initMap">
+    </script>
+      </div>  
+
+  </div>        
+  </div>
+</section>
+  
+<div class="container-fluid copyright">
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-linkedin"></a>
+          <a href="#" class="fa fa-youtube"></a>
+          <a href="#" class="fa fa-instagram"></a>
+          <a href="#" class="fa fa-skype"></a>
+</div>
+<!-- javascript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $("textarea").tooltip();
+        $(".form-group.collapse").collapse();
+    </script>
+</body>
+</html>
